@@ -1,0 +1,28 @@
+
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">Movie booking app</a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search movie" name="search"  [(ngModel)]="name" aria-label="Search">
+      
+    </form>
+  </nav>
+
+
+
+  <div class="container">
+      <div class="row">
+        <div class="row" *ngFor="let thumb of receivedData  |  filter : name" (click)="onclick(thumb.title)">
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    
+                         &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; 
+                      
+                             <img [src]="thumb['backdrop_path']" alt="thumb['title']" width="300" height =350 id="r">
+                             <div class="title">
+                                <span>{{ thumb['title']}}</span>
+                              </div>
+                   
+                </div>
+              
+            </div>
+      </div>
+  </div>

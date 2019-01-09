@@ -1,0 +1,87 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand">Movie booking app</a>
+      
+      </nav>
+
+
+
+      <div class="container"  *ngIf="done">
+            <div class="row">
+              <div class="row" *ngFor="let element of theaterInfo" >
+                      <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                               &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; 
+                           
+                             <img [src]="movieData['backdrop_path']" alt="thumb['title']" width="300" height =350 id="r">  
+                                         <p>theaterName:{{element.theatersName}}</p> <strong>show timming </strong> 
+
+
+                                     <div *ngFor="let timing of element.shows;index as i" >
+                                          
+                                           <button class="btn btn-default" style="background-color: lightskyblue;width: 70%"(click)=onclick(element,timing,i) >{{timing}}</button>
+                                           <p (click)=onclick(element,timing,i)> seatsAvaliable:  {{element.seats[i]}}  &nbsp;&nbsp; &nbsp; &nbsp;  </p>
+                                        </div>
+                                
+                 
+                       </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <div class="top"  *ngIf="clicked">
+        <div class="overlay" >
+            
+                 <img [src]="movieData['backdrop_path']" alt="thumb['title']" id="main"/> 
+                
+            
+                <div *ngIf="notBokkedSeats">
+                        <strong>select number of seats below </strong><br>
+                        <!-- <ul> -->
+                         <button class="btn btn-default" style="background-color: aliceblue"(click)=selctedSeats(1) >1</button> &nbsp;
+                         <button  class="btn btn-default" style="background-color: aliceblue"(click)=selctedSeats(2)  >2</button> &nbsp;
+                         <button   class="btn btn-default"style="background-color: aliceblue" (click)=selctedSeats(3)>3</button> &nbsp;
+                          <button  class="btn btn-default"style="background-color: aliceblue" (click)=selctedSeats(4) >4</button> &nbsp;
+                          <button  class="btn btn-default" style="background-color: aliceblue"(click)=selctedSeats(5) >5</button> &nbsp;
+                          <button class="btn btn-default" style="background-color: aliceblue" (click)=selctedSeats(6) >6</button> 
+                        <!-- </ul> -->
+                      </div>
+
+                <div  *ngIf="bokkedSeats" style="font-size: 100% ;color: rgb(184, 241, 179)">
+                       
+                 <strong>    {{bokkedSeats}}  tickets succesfully booked </strong> <br>
+                 <button (click)="gotoHomePage()" id="home">Home</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+<!-- "theaters":[{"theatersName":"PVR","shows":[13.45,5.00,9.00] ,"seats":[400,300,250] },{"theatersName":"Asian Gpr Multiplex","shows":[14.45,4.45,9.30] ,"seats":[500,3600,450] }  ] -->

@@ -1,0 +1,72 @@
+.gallery {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    background-color: black;
+    opacity:0.8;
+
+}
+
+.thumb {
+    text-shadow: 2px 4px 6px rgb(71, 69, 69);
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    align-content: space-between;
+        cursor: pointer;
+}
+
+.thumb>.title {
+    display: block;
+    font-size: 24px;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.thumb p.popiularity {
+    margin: 0 !important;
+    padding: 5px;
+}
+
+.thumb .overview {
+    display: inline-block;
+    max-width: 290px;
+    line-height: 15px;
+    font-size: 12px;
+    height: 0px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    color: black;
+}
+
+.thumb:hover .overview {
+    color: white;
+    height: 60px;
+} 
+
+
+
+.btn:focus, .btn:active, button:focus, button:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  #image-gallery .modal-footer{
+    display: block;
+  }
+  
+  .thumb{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
